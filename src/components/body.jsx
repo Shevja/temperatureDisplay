@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import Form from './elements/form'
 import Weather from './elements/weather'
+import Info from './elements/info'
+import './assets/body.css'
+import './assets/info.css'
+import './assets/weather.css'
 
 const API_KEY = "c642b6f7c81d3c42f61081b23d3bded5"
 
@@ -57,16 +61,23 @@ class Body extends Component {
 
     render() {
         return (
-            <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                <Form weatherMethod={this.getWeatherInfo} />
-                <Weather
-                    city={this.state.city}
-                    temp={this.state.temp}
-                    country={this.state.country}
-                    sunrise={this.state.sunrise}
-                    sunset={this.state.sunset}
-                    error={this.state.error}
-                />
+            <div className="wrapper">
+                <div className="main">
+                    <div className="col-sm-4 info-container">
+                        <Info />
+                    </div>
+                    <div className="col-sm-8 weather-container">
+                        <Form weatherMethod={this.getWeatherInfo} />
+                        <Weather
+                            city={this.state.city}
+                            temp={this.state.temp}
+                            country={this.state.country}
+                            sunrise={this.state.sunrise}
+                            sunset={this.state.sunset}
+                            error={this.state.error}
+                        />
+                    </div>
+                </div>
             </div>
         );
     };

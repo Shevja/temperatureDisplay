@@ -1,0 +1,13 @@
+.info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 55vh;
+    padding: 20px;
+    background: url("img/weather.jpg") center center no-repeat;
+    background-size: cover;
+
+    color: rgb(60, 60, 60);
+    font-size: 36px;
+}
