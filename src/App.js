@@ -1,12 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import Body from './components/body';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
+      <Body/>
     </div>
   );
 }
