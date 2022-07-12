@@ -51,3 +51,21 @@ button:active {
     position: relative;
     top: 2px;
 }
+
+.temperature-info {
+    display: flex;
+    justify-content: space-around;
+}
+
+.optional-info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 16vh;
+    font-size: 26px;
+}
+
+.optional-info-child {
+    display: flex;
+    justify-content: space-evenly;
+}

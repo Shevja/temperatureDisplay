@@ -16,13 +16,21 @@ class Body extends Component {
         country: undefined,
         sunrise: undefined,
         sunset: undefined,
+        windSpeed: undefined,
+        pressure: undefined,
+        humidity: undefined,
+        event: undefined,
         error: undefined
     }
 
     getData = async (city) => {
-        const api_url = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
-        const data = await api_url.json();
-        console.log(data)
+        let data;
+        const api_url = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`)
+        if (api_url.status === 200) {
+            data = await api_url.json();
+        } else {
+            data = undefined;
+        }
         return data;
     }
 
@@ -39,14 +47,33 @@ class Body extends Component {
         if (city) {
             const data = await this.getData(city);
 
-            this.setState({
-                city: data.name,
-                temp: data.main.temp,
-                country: data.sys.country,
-                sunrise: this.getTimeFromTimeStamp(data.sys.sunrise),
-                sunset: this.getTimeFromTimeStamp(data.sys.sunset),
-                error: undefined
-            })
+            if (data) {
+                this.setState({
+                    city: data.name,
+                    temp: Math.round(data.main.temp),
+                    country: data.sys.country,
+                    sunrise: this.getTimeFromTimeStamp(data.sys.sunrise),
+                    sunset: this.getTimeFromTimeStamp(data.sys.sunset),
+                    windSpeed: data.wind.speed,
+                    pressure: data.main.pressure,
+                    humidity: data.main.humidity,
+                    event: data.weather[0].main,
+                    error: undefined
+                })
+            } else {
+                this.setState({
+                    city: undefined,
+                    temp: undefined,
+                    country: undefined,
+                    sunrise: undefined,
+                    sunset: undefined,
+                    windSpeed: undefined,
+                    pressure: undefined,
+                    humidity: undefined,
+                    event: undefined,
+                    error: "Введите название существующего города"
+                })
+            }
         } else {
             this.setState({
                 city: undefined,
@@ -54,6 +81,10 @@ class Body extends Component {
                 country: undefined,
                 sunrise: undefined,
                 sunset: undefined,
+                windSpeed: undefined,
+                pressure: undefined,
+                humidity: undefined,
+                event: undefined,
                 error: "Введите название города"
             })
         }
@@ -74,6 +105,10 @@ class Body extends Component {
                             country={this.state.country}
                             sunrise={this.state.sunrise}
                             sunset={this.state.sunset}
+                            humidity={this.state.humidity}
+                            pressure={this.state.pressure}
+                            windSpeed={this.state.windSpeed}
+                            event={this.state.event}
                             error={this.state.error}
                         />
                     </div>
