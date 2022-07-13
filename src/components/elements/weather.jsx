@@ -7,7 +7,7 @@ const Weather = props => (
             <div className="weather-container">
                 <p>{props.city}, {props.country}</p>
                 <div className="temperature-info">
-                    <p style={{ fontSize: '72px' }}>{props.temp}°</p>
+                    <p style={{ fontSize: '72px' }}>{props.temp} C°</p>
                     <p>{props.event}</p>
                 </div>
                 <div className="optional-info">

@@ -96,9 +96,9 @@ class Body extends Component {
                 <div className="main">
                     <div className="col-sm-4 info-container">
                         <Info />
+                        <Form weatherMethod={this.getWeatherInfo} />
                     </div>
                     <div className="col-sm-8 weather-container">
-                        <Form weatherMethod={this.getWeatherInfo} />
                         <Weather
                             city={this.state.city}
                             temp={this.state.temp}
