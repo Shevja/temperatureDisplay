@@ -16,12 +16,7 @@ const Weather = props => {
                             <p style={{ fontSize: '72px' }}>
                                 {props.weather.weatherInfo[0].temperature.curr}°
                             </p>
-                            <div>
-                                <WeatherEventIcon weatherEvent={props.weather.weatherInfo[0].phenomen} />
-                                <p style={{ display: 'flex', justifyContent: 'center', margin: '-3px' }}>
-                                    {props.weather.weatherInfo[0].phenomen}
-                                </p>
-                            </div>
+                            <WeatherEventIcon weatherEvent={props.weather.weatherInfo[0].phenomen} />
                         </div>
                         <div className="main-info info-card">
                             <p>Ощущается: {props.weather.weatherInfo[0].temperature.feels}°</p>
