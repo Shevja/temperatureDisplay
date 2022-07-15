@@ -43,7 +43,7 @@ const Weather = props => {
                         <div className="info-card">
                             <div className="optional-info-content">
                                 <WeatherPararmeterIcon weatherParameter='pressure' />
-                                <p>{props.weather.weatherInfo[0].pressure}(ГПа)</p>
+                                <p>{props.weather.weatherInfo[0].pressure} ГПа</p>
                             </div>
                             <div className="optional-info-content">
                                 <WeatherPararmeterIcon weatherParameter='humidity' />

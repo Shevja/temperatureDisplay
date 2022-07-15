@@ -45,10 +45,10 @@ class Body extends Component {
         weatherData.forEach(element => {
             weather16days.push({
                 temperature: {
-                    curr: element.temp,
-                    max: element.high_temp,
-                    min: element.low_temp,
-                    feels: element.app_min_temp
+                    curr: Math.round(element.temp),
+                    max: Math.ceil(element.high_temp),
+                    min: Math.floor(element.low_temp),
+                    feels: Math.floor((element.app_min_temp + element.app_max_temp) / 2)
                 },
                 wind: {
                     direction: element.wind_cdir,
@@ -60,7 +60,7 @@ class Body extends Component {
                     set: this.getTimeFromTimeStamp(element.sunset_ts)
                 },
                 phenomen: element.weather.description,
-                pressure: element.pres,
+                pressure: Math.round(element.pres),
                 humidity: element.rh,
                 clouds: element.clouds,
                 uv: element.uv,
