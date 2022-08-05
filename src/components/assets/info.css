@@ -1,10 +1,12 @@
 .info-container {
-    height: 55vh;
+    display: grid;
+    grid-template-rows: 1fr 2fr 4fr;
     padding: 20px;
-    background: url("img/weather.jpg") center center no-repeat;
-    background-size: cover;
+    height: 90vh;
 
-    color: rgb(60, 60, 60);
+    color: white;
+    border-radius: 14px;
+    background-color: #484848;
     font-size: 28px;
 }
 

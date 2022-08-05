@@ -1,15 +1,20 @@
 .weather-container {
-    display: flex;
-    flex-direction: column;
+    height: 90vh;
     color: #fff;
-
     background-color: #2a6bb1;
 }
 
+.weather-info {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 0fr 1fr;
+    grid-gap: 15px;
+    height: 90vh;
+}
+
 .info-card {
-    min-height: 140px;
-    height: min-content;
     background: #3a3a3a;
+    border-radius: 14px;
 }
 
 .info-card:nth-of-type(3n) {
@@ -21,19 +26,12 @@
 }
 
 .main-info {
-    padding: 12px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    border-radius: 1px;
-}
-
-.main-info:last-child {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    font-size: 20px;
+    height: 35vh;
+    padding: 12px;
 }
 
 .main-info p {
@@ -47,26 +45,30 @@
     align-items: center;
 }
 
-.optional-info {
-    display: flex;
-    font-size: 26px;
-    margin-top: 4px;
-
-    /* column-count: auto;
-    column-gap: 4px; */
-
+.optional-info-right {
     display: grid;
-    grid-gap: 4px;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+
+    font-size: 26px;
     overflow: hidden;
-    grid-auto-flow: dense;
-    grid-template-columns: repeat(auto-fit, minmax(246px, 1fr));
+}
+
+.optional-info-left {
+    display: grid;
+    grid-gap: 15px;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    grid-row-end: end;
+
+    font-size: 26px;
+    overflow: hidden;
 }
 
 .optional-info-content {
     display: flex;
     width: max-content;
     height: 67px;
-    border-radius: 1px;
     padding: 14px;
     align-items: center;
 }

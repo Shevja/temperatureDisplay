@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Form from './elements/form'
 import Weather from './elements/weather'
-import Info from './elements/info'
+import Selector from './elements/selector'
 import './assets/body.css'
 import './assets/info.css'
 import './assets/weather.css'
@@ -32,7 +32,7 @@ class Body extends Component {
     getTimeFromTimeStamp = (timeStamp) => { // Криво работает
         const date = new Date(timeStamp * 1000);
         let dateOffset = (new Date().getTimezoneOffset()) / 60;
-        
+
         // console.log(dateOffset / 60);
         // console.log(date.toUTCString());
 
@@ -103,14 +103,13 @@ class Body extends Component {
     render() {
         return (
             <div className="wrapper">
-                <div className="main">
-                    <div className="col-sm-4 info-container">
-                        <Info />
-                        <Form weatherMethod={this.getWeatherInfoByCity} />
-                    </div>
-                    <div className="col-sm-8 weather-container">
-                        <Weather weather={this.state} />
-                    </div>
+                <div className="info-container">
+                    <p>Погода</p>
+                    <Form weatherMethod={this.getWeatherInfoByCity} />
+                    <Selector />
+                </div>
+                <div className="weather-container">
+                    <Weather weather={this.state} />
                 </div>
             </div>
         );

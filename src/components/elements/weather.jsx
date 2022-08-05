@@ -10,48 +10,34 @@ const Weather = props => {
     return (
         <div>
             {props.weather.city &&
-                <div className="weather-container">
-                    <div className="main-info-container">
-                        <div className="main-info info-card">
-                            <p style={{ fontSize: '72px' }}>
-                                {props.weather.weatherInfo[0].temperature.curr}°
+                <div className="weather-info">
+                    <div className="main-info info-card">
+                        <div>
+                            <p>
+                                {props.weather.city}
                             </p>
-                            <WeatherEventIcon weatherEvent={props.weather.weatherInfo[0].phenomen} />
+                            <p>
+                                {props.weather.weatherInfo[0].date}
+                            </p>
                         </div>
-                        <div className="main-info info-card">
-                            <p>Ощущается: {props.weather.weatherInfo[0].temperature.feels}°</p>
-                            <p>Макс.: {props.weather.weatherInfo[0].temperature.max}°</p>
-                            <p>Мин.: {props.weather.weatherInfo[0].temperature.min}°</p>
-                        </div>
+                        <WeatherEventIcon weatherEvent={props.weather.weatherInfo[0].phenomen} />
+                        <p style={{ fontSize: '72px' }}>
+                            {props.weather.weatherInfo[0].temperature.curr}°C
+                        </p>
                     </div>
-                    <div className="optional-info">
+                    <div className="main-info info-card">
+                        <p>Ощущается: {props.weather.weatherInfo[0].temperature.feels}°</p>
+                        <p>Макс.: {props.weather.weatherInfo[0].temperature.max}°</p>
+                        <p>Мин.: {props.weather.weatherInfo[0].temperature.min}°</p>
+                    </div>
+                    <div className="optional-info-right">
                         <div className="info-card">
                             <div className="optional-info-content">
-                                <WeatherPararmeterIcon weatherParameter='sunrise' />
-                                <p>{props.weather.weatherInfo[0].sun.rise}</p>
-                            </div>
-                            <div className="optional-info-content">
-                                <WeatherPararmeterIcon weatherParameter='sunset' />
-                                <p>{props.weather.weatherInfo[0].sun.set}</p>
-                            </div>
-                        </div>
-                        <div className="info-card">
-                            <div className="optional-info-content">
-                                <WeatherPararmeterIcon weatherParameter='pressure' />
-                                <p>{props.weather.weatherInfo[0].pressure} ГПа</p>
-                            </div>
-                            <div className="optional-info-content">
-                                <WeatherPararmeterIcon weatherParameter='humidity' />
-                                <p>{props.weather.weatherInfo[0].humidity}%</p>
-                            </div>
-                        </div>
-                        <div className="info-card">
-                            <div className="optional-info-content">
-                                <WeatherPararmeterIcon weatherParameter='windSpeed'/>
+                                <WeatherPararmeterIcon weatherParameter='windSpeed' />
                                 <p>{props.weather.weatherInfo[0].wind.speed} м/c ({props.weather.weatherInfo[0].wind.gust} м/c)</p>
                             </div>
                             <div className="optional-info-content">
-                                <WeatherPararmeterIcon weatherParameter='windDir'/>
+                                <WeatherPararmeterIcon weatherParameter='windDir' />
                                 <p>{props.weather.weatherInfo[0].wind.direction}</p>
                             </div>
                         </div>
@@ -65,15 +51,53 @@ const Weather = props => {
                                 <p>{props.weather.weatherInfo[0].uv}</p>
                             </div>
                         </div>
+                        <div>
+                            Заглушка: выбор дня для прогноза
+                        </div>
+                    </div>
+                    <div className="optional-info-left">
+                        <div className="info-card">
+                            <div className="optional-info-content">
+                                <WeatherPararmeterIcon weatherParameter='sunrise' />
+                                <p>{props.weather.weatherInfo[0].sun.rise}</p>
+                            </div>
+                        </div>
+                        <div className="info-card">
+                            <div className="optional-info-content">
+                                <WeatherPararmeterIcon weatherParameter='sunset' />
+                                <p>{props.weather.weatherInfo[0].sun.set}</p>
+                            </div>
+                        </div>
+                        <div className="info-card">
+                            <div className="optional-info-content">
+                                <WeatherPararmeterIcon weatherParameter='pressure' />
+                                <p>{props.weather.weatherInfo[0].pressure} ГПа</p>
+                            </div>
+                        </div>
+                        <div className="info-card">
+                            <div className="optional-info-content">
+                                <WeatherPararmeterIcon weatherParameter='humidity' />
+                                <p>{props.weather.weatherInfo[0].humidity}%</p>
+                            </div>
+                        </div>
                         <div className="info-card">
                             <div className="optional-info-content">
                                 <WeatherPararmeterIcon weatherParameter='cloud' />
                                 <p>{props.weather.weatherInfo[0].clouds}%</p>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        Заглушка: выбор дня для прогноза
+                        <div className="info-card">
+                            <div className="optional-info-content">
+                                <WeatherPararmeterIcon weatherParameter='cloud' />
+                                <p>{props.weather.weatherInfo[0].clouds}%</p>
+                            </div>
+                        </div>
+                        <div className="info-card">
+                            <div className="optional-info-content">
+                                <WeatherPararmeterIcon weatherParameter='cloud' />
+                                <p>{props.weather.weatherInfo[0].clouds}%</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             }
