@@ -4,7 +4,7 @@
     column-gap: 15px;
     align-items: center;
     height: 100vh;
-    font-family: "Open Sans", serif;
+    font-family: monospace;
     padding: 40px;
 
     background-color: rgb(135, 152, 170);

@@ -45,7 +45,7 @@ class Body extends Component {
         weatherData.forEach(element => {
             weather16days.push({
                 temperature: {
-                    curr: Math.round(element.temp),
+                    curr: Math.round(element.app_max_temp),
                     max: Math.ceil(element.high_temp),
                     min: Math.floor(element.low_temp),
                     feels: Math.floor((element.app_min_temp + element.app_max_temp) / 2)
@@ -59,11 +59,15 @@ class Body extends Component {
                     rise: this.getTimeFromTimeStamp(element.sunrise_ts),
                     set: this.getTimeFromTimeStamp(element.sunset_ts)
                 },
+                moon: {
+                    phase: element.moon_phase_lunation
+                },
                 phenomen: element.weather.description,
                 pressure: Math.round(element.pres),
                 humidity: element.rh,
                 clouds: element.clouds,
                 uv: element.uv,
+                visibility: Math.round(parseFloat(element.vis) * 100) / 100,
                 precipitations: element.pop,
                 date: element.datetime
             })
