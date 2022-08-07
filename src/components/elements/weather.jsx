@@ -14,15 +14,14 @@ const Weather = props => {
             {props.weather.city &&
                 <div className="weather-info">
                     <div className="main-info info-card">
-                        <p style={{alignItems: 'center'}}>
+                        <p style={{ alignItems: 'center' }}>
                             <WeatherEventIcon weatherEvent={props.weather.weatherInfo[0].phenomen} />
-                            {props.weather.weatherInfo[0].phenomen}
                         </p>
                         <div>
                             <p style={{ fontSize: '72px' }}>
                                 {props.weather.weatherInfo[0].temperature.curr}°C
                             </p>
-                            <p>Ощущается как: {props.weather.weatherInfo[0].temperature.feels}°</p>
+                            <p>Ощущается как: {props.weather.weatherInfo[0].temperature.feels_av}°</p>
                             <p>
                                 {props.weather.city}
                             </p>
@@ -32,7 +31,7 @@ const Weather = props => {
                         </div>
                     </div>
                     <div className="main-info info-card">
-                        <p>Ощущается: {props.weather.weatherInfo[0].temperature.feels}°</p>
+                        <p>Ощущается: {props.weather.weatherInfo[0].temperature.feels_av}°</p>
                     </div>
                     <div className="optional-info opt-left-side">
                         <div className="info-card">
@@ -70,10 +69,10 @@ const Weather = props => {
                             <div className="optional-info-content">
                                 <div className="optional-info-element">
                                     <p>
-                                        <WeatherParameterIcon weatherParameter='windDir' />
-                                        {props.weather.weatherInfo[0].wind.direction}
+                                        <WeatherParameterIcon weatherParameter='cloud' />
+                                        {props.weather.weatherInfo[0].clouds}%
                                         <br />
-                                        <span>Направление</span>
+                                        <span>Облачность</span>
                                     </p>
                                 </div>
                             </div>
@@ -110,22 +109,46 @@ const Weather = props => {
                             <div className="optional-info-content">
                                 <div className="optional-info-element">
                                     <p>
-                                        <WeatherParameterIcon weatherParameter='moonPhase' />
-                                        <WeatherMoonPhase moonPhase={props.weather.weatherInfo[0].moon.phase} />
+                                        <WeatherParameterIcon weatherParameter='precip' />
+                                        {props.weather.weatherInfo[0].precipitations}%
                                         <br />
-                                        <span>Фаза луны</span>
+                                        <span>Осадки</span>
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        <div className="info-card">
-                            <div className="optional-info-content">
-                                <WeatherParameterIcon weatherParameter='precip' />
-                                <p>{props.weather.weatherInfo[0].precipitations}%</p>
+                        <div className="info-card ic-right-side">
+                            <div className="optional-info-element">
+                                <p>
+                                    <WeatherParameterIcon weatherParameter='moonPhase' />
+                                    <WeatherMoonPhase moonPhase={props.weather.weatherInfo[0].moon.phase} />
+                                    <br />
+                                    <span>Фаза луны</span>
+                                </p>
                             </div>
-                            <div className="optional-info-content">
-                                <WeatherParameterIcon weatherParameter='uv' />
-                                <p>{props.weather.weatherInfo[0].uv}</p>
+                            <div className="optional-info-element">
+                                <p>
+                                    <WeatherParameterIcon weatherParameter='windDir' />
+                                    {props.weather.weatherInfo[0].wind.direction}
+                                    <br />
+                                    <span>Напраление ветра</span>
+                                </p>
+                            </div>
+                            <div className="optional-info-element">
+                                <p>
+                                    <WeatherParameterIcon weatherParameter='ozone' />
+                                    {props.weather.weatherInfo[0].ozone}
+                                    <br />
+                                    <span>Уровень озона</span>
+                                </p>
+                            </div>
+                            <div className="optional-info-element">
+                                <p>
+                                    <WeatherParameterIcon weatherParameter='snow_depth' />
+                                    {props.weather.weatherInfo[0].snow_depth}
+                                    <br />
+                                    <span>Глубина снега (мм)</span>
+                                </p>
                             </div>
                         </div>
                     </div>

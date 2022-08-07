@@ -1,7 +1,6 @@
 .weather-container {
     height: 90vh;
     color: #fff;
-    background-color: #2a6bb1;
 }
 
 .weather-container svg {
@@ -11,7 +10,7 @@
 .weather-info {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 23vh 36vh 1fr;
     grid-gap: 15px;
     height: 90vh;
 }
@@ -20,9 +19,15 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    background: #93939385;
+    background: #999999bd;
     border-radius: 14px;
-    padding: 24px;
+    padding: 22px;
+}
+
+.ic-right-side {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
 }
 
 .main-info-container {
@@ -34,7 +39,6 @@
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    height: 35vh;
     padding: 12px;
 }
 
@@ -64,7 +68,7 @@
 .opt-right-side {
     grid-column-start: 2;
     grid-row-start: 2;
-    grid-row-end: end;
+    grid-row-end: 4;
 }
 
 .optional-info-content {
@@ -89,7 +93,20 @@
 
 .day-forecast-selector {
     display: flex;
-    overflow: hidden;
+    overflow-x: scroll;
+}
+
+.day-forecast-selector::-webkit-scrollbar {
+    width: 20px;
+}
+
+.day-forecast-selector::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 50px;
+}
+
+.day-forecast-selector::-webkit-scrollbar-thumb:hover {
+    background: #ccc;
 }
 
 .day-card {
@@ -107,6 +124,10 @@
     background-color: #93939385;
 }
 
+.day-card:last-child {
+    margin-right: 0;
+}
+
 .day-card-temp {
     display: flex;
     justify-content: space-between;
@@ -116,4 +137,8 @@
 
 .day-card-temp p {
     margin: 0;
+}
+
+.selector_button {
+    position: absolute;
 }

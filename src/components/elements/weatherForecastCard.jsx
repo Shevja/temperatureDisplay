@@ -9,7 +9,6 @@ const WeatherForecastCard = props => {
                 <div className="day-card" key={element.date}>
                     <p>{element.date}</p>
                     <WeatherEventIcon weatherEvent={element.phenomen} />
-                    {element.phenomen}
                     <div className="day-card-temp">
                         <p style={{color: '#ffce5f'}}>{element.temperature.max}°</p>
                         <p style={{color: '#5da6ff'}}>{element.temperature.min}°</p>
