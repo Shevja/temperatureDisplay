@@ -10,7 +10,7 @@ const Weather = props => {
     console.log(props.weather)
 
     return (
-        <div>
+        <div className="weather-container">
             {props.weather.city &&
                 <div className="weather-info">
                     <div className="main-info info-card">

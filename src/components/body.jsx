@@ -112,9 +112,7 @@ class Body extends Component {
         return (
             <div className="wrapper">
                 <Form weatherMethod={this.getWeatherInfoByCity} />
-                <div className="weather-container">
-                    <Weather weather={this.state} />
-                </div>
+                <Weather weather={this.state} />
             </div>
         );
     };
