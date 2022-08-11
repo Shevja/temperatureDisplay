@@ -1,64 +1,61 @@
-.info-container {
-    display: grid;
-    grid-template-rows: 1fr 2fr 4fr;
-    padding: 20px;
-    height: 90vh;
-
-    color: white;
-    border-radius: 14px;
-    background-color: #262626;
-    font-size: 28px;
+.form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-.info-container input {
+.input-container{
     width: 100%;
-    font-size: 24px;
+}
+
+.input-container input {
+    width: 100%;
     background-color: transparent;
     border: 0;
-    border-bottom: solid 3px #113a65;
-    padding-bottom: 4px;
+    border-bottom: solid 3px #979797;
+    font-size: 24px;
     font-weight: lighter;
-    margin-right: 20px;
     outline: none;
+    color: #fff;
 }
 
-.info-container input:focus {
-    border-color: #185aa0;
+input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus, 
+  input:-webkit-autofill:active  {
+      -webkit-box-shadow: 0 0 0 30px #979797 inset !important;
+  }
+
+.input-container input:focus {
+    border-color: #fff;
 }
 
 input::-webkit-input-placeholder {
-    color: #103a65;
+    color: #666666;
 }
 
 input::-moz-placeholder {
-    color: #103a65;
+    color: #666666;
 }
 
-button {
-    border: 2px solid #103a65;
-    border-bottom: 4px solid #103a65;
+.input-container button {
+    width: 20%;
+    min-width: max-content;
+    border: 3px solid #979797;
     padding: 4px 20px;
-    border-radius: 2px;
     cursor: pointer;
-    background-color: #235d9c;
+    background-color: transparent;
     color: #fff;
-    outline: none !important;
+    outline: none !important;   
 }
 
-button:hover {
-    border-bottom: 2px solid #103a65;
+.input-container button:hover {
+    background-color: #e1e1e1;
+    border-color: #e1e1e1;
+    color: black;
+}
+
+.input-container button:active {
     position: relative;
     top: 2px;
-}
-
-button:active {
-    border-bottom: 2px solid transparent;
-    border-color: transparent;
-    position: relative;
-    top: 2px;
-}
-
-.info-container button {
-    width: 100%;
-    font-size: 18px;
 }

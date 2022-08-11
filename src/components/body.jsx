@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import Form from './elements/form'
 import Weather from './elements/weather'
-import Selector from './elements/selector'
 import './assets/body.css'
-import './assets/info.css'
 import './assets/weather.css'
 
 const API_KEY = 'e77278944be14c17ae9cd4bc737934a0';
@@ -113,11 +111,7 @@ class Body extends Component {
     render() {
         return (
             <div className="wrapper">
-                <div className="info-container">
-                    <p>Погода</p>
-                    <Form weatherMethod={this.getWeatherInfoByCity} />
-                    <Selector />
-                </div>
+                <Form weatherMethod={this.getWeatherInfoByCity} />
                 <div className="weather-container">
                     <Weather weather={this.state} />
                 </div>

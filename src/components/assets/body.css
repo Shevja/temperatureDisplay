@@ -1,11 +1,11 @@
 .wrapper {
     display: grid;
-    grid-template-columns: 1fr 5fr;
-    column-gap: 15px;
+    grid-template-rows: 1fr 5fr;
+    row-gap: 15px;
     align-items: center;
     height: 100vh;
     font-family: monospace;
-    padding: 40px;
+    padding: 24px;
 
     backdrop-filter: blur(100px);
 }
