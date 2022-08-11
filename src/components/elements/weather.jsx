@@ -30,9 +30,7 @@ const Weather = props => {
                             </p>
                         </div>
                     </div>
-                    <div className="main-info info-card">
-                        <p>Ощущается: {props.weather.weatherInfo[0].temperature.feels_av}°</p>
-                    </div>
+                    <iframe className="map-container" src="https://embed.windy.com/embed2.html?lat=50.402&lon=79.541&detailLat=55.154&detailLon=73.740&width=650&height=450&zoom=4&level=surface&overlay=rain&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=m%2Fs&metricTemp=%C2%B0C&radarRange=-1" frameborder="0"></iframe>
                     <div className="optional-info opt-left-side">
                         <div className="info-card">
                             <div className="optional-info-content">
@@ -52,7 +50,7 @@ const Weather = props => {
                                         <WeatherParameterIcon weatherParameter='windSpeed' />
                                         {props.weather.weatherInfo[0].wind.speed}({props.weather.weatherInfo[0].wind.gust}) м/c
                                         <br />
-                                        <span>скорость ветра</span>
+                                        <span>Скорость ветра</span>
                                     </p>
                                 </div>
                             </div>
@@ -149,50 +147,6 @@ const Weather = props => {
                                     <br />
                                     <span>Глубина снега (мм)</span>
                                 </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="optional-info opt-right-side">
-                        <div className="info-card">
-                            <div className="optional-info-content">
-                                <WeatherParameterIcon weatherParameter='sunrise' />
-                                <p>{props.weather.weatherInfo[0].sun.rise}</p>
-                            </div>
-                        </div>
-                        <div className="info-card">
-                            <div className="optional-info-content">
-                                <WeatherParameterIcon weatherParameter='sunset' />
-                                <p>{props.weather.weatherInfo[0].sun.set}</p>
-                            </div>
-                        </div>
-                        <div className="info-card">
-                            <div className="optional-info-content">
-                                <WeatherParameterIcon weatherParameter='pressure' />
-                                <p>{props.weather.weatherInfo[0].pressure} ГПа</p>
-                            </div>
-                        </div>
-                        <div className="info-card">
-                            <div className="optional-info-content">
-                                <WeatherParameterIcon weatherParameter='humidity' />
-                                <p>{props.weather.weatherInfo[0].humidity}%</p>
-                            </div>
-                        </div>
-                        <div className="info-card">
-                            <div className="optional-info-content">
-                                <WeatherParameterIcon weatherParameter='cloud' />
-                                <p>{props.weather.weatherInfo[0].clouds}%</p>
-                            </div>
-                        </div>
-                        <div className="info-card">
-                            <div className="optional-info-content">
-                                <WeatherParameterIcon weatherParameter='cloud' />
-                                <p>{props.weather.weatherInfo[0].clouds}%</p>
-                            </div>
-                        </div>
-                        <div className="info-card">
-                            <div className="optional-info-content">
-                                <WeatherParameterIcon weatherParameter='cloud' />
-                                <p>{props.weather.weatherInfo[0].clouds}%</p>
                             </div>
                         </div>
                     </div>

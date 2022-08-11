@@ -19,7 +19,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    background: #999999bd;
+    background: #ffffff52;
     border-radius: 14px;
     padding: 22px;
 }
@@ -94,6 +94,9 @@
 .day-forecast-selector {
     display: flex;
     overflow-x: scroll;
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
 .day-forecast-selector::-webkit-scrollbar {
@@ -116,7 +119,7 @@
     align-items: center;
 
     width: 24%;
-    min-width: 24%;
+    min-width: 17%;
     padding: 14px;
     margin-right: 15px;
     border-radius: 14px;
@@ -141,4 +144,13 @@
 
 .selector_button {
     position: absolute;
+}
+
+.map-container {
+    width: 100%;
+    height: 100%;
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    border-radius: 15px;
 }
