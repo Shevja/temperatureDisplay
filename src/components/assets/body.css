@@ -1,13 +1,11 @@
 .wrapper {
-    display: grid;
-    grid-template-rows: 1fr 5fr;
-    row-gap: 15px;
     align-items: center;
     height: 100vh;
     font-family: monospace;
     padding: 24px;
 
     backdrop-filter: blur(100px);
+    overflow: hidden;
 }
 
 .main {

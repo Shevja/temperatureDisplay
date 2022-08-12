@@ -10,7 +10,7 @@ const Weather = props => {
     console.log(props.weather)
 
     return (
-        <div className="weather-container">
+        <div className="weather-container animate__animated animate__fadeInUp">
             {props.weather.city &&
                 <div className="weather-info">
                     <div className="main-info info-card">
@@ -30,7 +30,7 @@ const Weather = props => {
                             </p>
                         </div>
                     </div>
-                    <iframe className="map-container" src="https://embed.windy.com/embed2.html?lat=50.402&lon=79.541&detailLat=55.154&detailLon=73.740&width=650&height=450&zoom=4&level=surface&overlay=rain&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=m%2Fs&metricTemp=%C2%B0C&radarRange=-1" frameborder="0"></iframe>
+                    <iframe className="map-container animate__animated animate__fadeInRight" src="https://embed.windy.com/embed2.html?lat=50.402&lon=79.541&detailLat=55.154&detailLon=73.740&width=650&height=450&zoom=4&level=surface&overlay=rain&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=m%2Fs&metricTemp=%C2%B0C&radarRange=-1" frameborder="0"></iframe>
                     <div className="optional-info opt-left-side">
                         <div className="info-card">
                             <div className="optional-info-content">
@@ -153,8 +153,8 @@ const Weather = props => {
                     <WeatherForecastCard WeatherForecast={props.weather.weatherInfo} />
                 </div>
             }
-            <p> {props.weather.error}</p>
-        </div >
+            {/* <p>{props.weather.error}</p> */}
+        </div>
     )
 }
 

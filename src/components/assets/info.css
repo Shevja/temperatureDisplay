@@ -5,7 +5,10 @@
 }
 
 .input-container{
+    position: relative;
+    top: 50%;
     width: 100%;
+    margin-bottom: 15px;
 }
 
 .input-container input {
@@ -58,4 +61,19 @@ input::-moz-placeholder {
 .input-container button:active {
     position: relative;
     top: 2px;
+}
+
+.slideUp {
+    position: relative;
+    top: 0%;
+    animation: slideUp 1.5s;
+}
+
+@keyframes slideUp {
+    0% {
+        top: 50%;
+    }
+    100% {
+        top: 0%;
+    }
 }

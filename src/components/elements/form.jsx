@@ -1,11 +1,16 @@
 import React from "react";
 import '../assets/info.css'
+import 'animate.css';
 
 const Form = props => (
-    <div className="input-container">
+    <div style={{transition: 'all .3s'}} id="input-c" className="input-container animate__animated animate__fadeIn">
         <form className="form-container" onSubmit={props.weatherMethod}>
             <input type="text" name="city" placeholder="Город" />
-            <button>Получить информацию</button>
+            <button onClick={()=>{
+                document.getElementById('input-c').classList.remove("animate__fadeIn");
+                document.getElementById('input-c').classList.remove("animate__animated");
+                document.getElementById('input-c').classList.add("slideUp");
+            }}>Получить информацию</button>
         </form>
     </div>
 )

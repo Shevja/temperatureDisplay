@@ -112,7 +112,11 @@ class Body extends Component {
         return (
             <div className="wrapper">
                 <Form weatherMethod={this.getWeatherInfoByCity} />
-                <Weather weather={this.state} />
+                {this.state.city === undefined ?
+                    null
+                    :
+                    <Weather weather={this.state} />
+                }
             </div>
         );
     };
