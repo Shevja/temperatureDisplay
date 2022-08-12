@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/temperatureDisplay/static/css/main.86809cb5.css",
+    "main.js": "/temperatureDisplay/static/js/main.8e61bf4a.js",
+    "static/js/787.d14f324c.chunk.js": "/temperatureDisplay/static/js/787.d14f324c.chunk.js",
+    "static/media/main_background.jpg": "/temperatureDisplay/static/media/main_background.ca4c01ce239b5e5275e4.jpg",
+    "index.html": "/temperatureDisplay/index.html",
+    "main.86809cb5.css.map": "/temperatureDisplay/static/css/main.86809cb5.css.map",
+    "main.8e61bf4a.js.map": "/temperatureDisplay/static/js/main.8e61bf4a.js.map",
+    "787.d14f324c.chunk.js.map": "/temperatureDisplay/static/js/787.d14f324c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.86809cb5.css",
+    "static/js/main.8e61bf4a.js"
+  ]
+}
