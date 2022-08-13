@@ -1,17 +1,19 @@
 import React from "react";
-import WeatherEventIcon from "../functions/weatherEventIcon";
 
 const WeatherForecastCard = props => {
     const getForecastCard = props => {
         let wForecastCard = [];
+        let weatherEventIcon;
         props.WeatherForecast.forEach(element => {
+            weatherEventIcon = `https://www.weatherbit.io/static/img/icons/${element.phenomen.icon}.png`;
             wForecastCard.push(
                 <div className="day-card" key={element.date}>
                     <p>{element.date}</p>
-                    <WeatherEventIcon weatherEvent={element.phenomen} />
+                    <img src={weatherEventIcon} alt="bad" />
+                    <p>{element.phenomen.description}</p>
                     <div className="day-card-temp">
-                        <p style={{color: '#ffce5f'}}>{element.temperature.max}°</p>
-                        <p style={{color: '#5da6ff'}}>{element.temperature.min}°</p>
+                        <p style={{ color: '#ffce5f' }}>{element.temperature.max}°</p>
+                        <p style={{ color: '#5da6ff' }}>{element.temperature.min}°</p>
                     </div>
                 </div>
             )

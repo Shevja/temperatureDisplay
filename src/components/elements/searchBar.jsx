@@ -1,5 +1,5 @@
 import React from "react";
-import '../assets/info.css'
+import '../assets/searchBar.css'
 import 'animate.css';
 
 const Form = props => (
@@ -7,8 +7,6 @@ const Form = props => (
         <form className="form-container" onSubmit={props.weatherMethod}>
             <input type="text" name="city" placeholder="Город" />
             <button onClick={()=>{
-                document.getElementById('input-c').classList.remove("animate__fadeIn");
-                document.getElementById('input-c').classList.remove("animate__animated");
                 document.getElementById('input-c').classList.add("slideUp");
             }}>Получить информацию</button>
         </form>

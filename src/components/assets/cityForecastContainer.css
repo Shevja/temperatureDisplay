@@ -110,6 +110,17 @@
     margin-right: 0;
 }
 
+.day-card img {
+    width: 50%;
+}
+
+.day-card p {
+    margin: 0;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .day-card-temp {
     display: flex;
     justify-content: space-between;
@@ -132,4 +143,5 @@
     grid-row-start: 1;
     grid-row-end: 3;
     border-radius: 15px;
+    overflow: hidden;
 }

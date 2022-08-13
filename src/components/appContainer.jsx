@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import Form from './elements/form'
-import Weather from './elements/weather'
-import './assets/body.css'
-import './assets/weather.css'
+import CitySearchBar from './elements/searchBar'
+import CityForecastContainer from './elements/forecastContainer'
+import './assets/appContainer.css'
+import './assets/cityForecastContainer.css'
 
-const API_KEY = 'e77278944be14c17ae9cd4bc737934a0';
+const API_KEY = 'e77278944be14c17ae9cd4bc737934a0'; //WeatherBit
 // const API_KEY = "c642b6f7c81d3c42f61081b23d3bded5"
 
 class Body extends Component {
@@ -17,7 +17,7 @@ class Body extends Component {
 
     getDataFromFetch = async (city) => {
         let data;
-        const api_url = await fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=${API_KEY}`);
+        const api_url = await fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&lang=ru&key=${API_KEY}`);
         // const api_url = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`)
         if (api_url.status === 200) {
             data = await api_url.json();
@@ -52,7 +52,7 @@ class Body extends Component {
 
                 },
                 wind: {
-                    direction: element.wind_cdir,
+                    direction: element.wind_cdir_full,
                     speed: element.wind_spd,
                     gust: element.wind_gust_spd
                 },
@@ -64,7 +64,10 @@ class Body extends Component {
                     phase: element.moon_phase_lunation
                 },
                 date: element.datetime,
-                phenomen: element.weather.description,
+                phenomen: {
+                    description: element.weather.description,
+                    icon: element.weather.icon                    
+                },
                 pressure: Math.round(element.pres),
                 humidity: element.rh,
                 clouds: element.clouds,
@@ -72,8 +75,7 @@ class Body extends Component {
                 visibility: Math.round(parseFloat(element.vis) * 100) / 100,
                 precipitations: element.pop,
                 ozone: element.ozone,
-                snow_depth: element.snow_depth,
-
+                snow_depth: element.snow_depth
             })
         });
         return weather16days;
@@ -111,11 +113,11 @@ class Body extends Component {
     render() {
         return (
             <div className="wrapper">
-                <Form weatherMethod={this.getWeatherInfoByCity} />
+                <CitySearchBar weatherMethod={this.getWeatherInfoByCity} />
                 {this.state.city === undefined ?
                     null
                     :
-                    <Weather weather={this.state} />
+                    <CityForecastContainer weather={this.state} />
                 }
             </div>
         );
